@@ -44,3 +44,21 @@ img{
     width:360px ;
     height: auto;
 }
+
+h2{
+    background-color: gray;
+    color: aliceblue;
+    padding: 10px;
+    border-left: 10px rgb(207, 199, 199);
+    margin-top: px;
+    border-radius: 8px;
+}
+
+h3{
+    background-color: gray;
+    color: aliceblue;
+    padding: 10px;
+    border-left: 10px rgb(207, 199, 199);
+    margin-top: px;
+    border-radius: 8px;
+}
