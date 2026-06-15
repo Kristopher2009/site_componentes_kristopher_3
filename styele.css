@@ -1,78 +1,168 @@
-body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+/* ==========================================================================
+   1. ESTILOS GERAIS (Funcionam em qualquer tamanho de tela)
+   ========================================================================== */
+   body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
-    background-color: white;
-    color: black;
-    font-size:medium;
-    font-style: initial;
+    background-color: #f8f9fa;
+    color: #212529;
+    font-size: 16px;
+    margin: 0;
+    padding: 0; /* Removido o padding fixo para controlar melhor no mobile */
 }
-nav{
-    padding: 0px 4px;
-    font-style:inherit;
-    background-color:  rgb(67, 150, 245);
+
+/* Links */
+a {
+    text-decoration: none;
+    color: #0d6efd;
+    transition: color 0.2s ease;
+}
+
+a:hover {
+    color: #0a58ca;
+}
+
+/* Mídias responsivas */
+video, img {
+    max-width: 100%; /* Garante que nunca fiquem maiores que a tela do celular */
+    width: 100%;     /* Ocupa a largura disponível até o limite máximo */
+    max-width: 360px; /* Limite do tamanho original que você pediu */
+    height: auto;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: block;
+    margin: 20px auto; /* Centraliza em telas menores */
 }
 
-nav a{
-    margin:8px;
-    font-style: oblique;
+/* Títulos */
+h2 {
+    color: #212529;
+    border-left: 5px solid #0d6efd;
+    padding-left: 15px;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
 }
 
-a{
-    text-decoration: none;
-    color: rgb(0, 0, 0);
-    
-}
-    
-
-nav a{
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    
-    
+h3 {
+    color: #495057;
+    border-left: 4px solid #6c757d;
+    padding-left: 12px;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    font-size: 1.3rem;
 }
 
-header{
-    background-color:rgb(67, 150, 245);
-    text-align: center;
-    border-radius: 16px;
+/* ==========================================================================
+   2. ESTILOS PARA CELULAR (Telas pequenas - até 768px)
+   ========================================================================== */
+@media (max-width: 768px) {
+    body {
+        padding: 12px; /* Margem menor nas bordas do celular */
+    }
+
+    header {
+        background-color: #0d6efd;
+        color: #ffffff;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    nav {
+        background-color: #ffffff;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: column; /* Links ficam um embaixo do outro no celular */
+        gap: 8px;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        color: #495057;
+        font-weight: 500;
+        padding: 10px;
+        border-radius: 6px;
+        background-color: #f1f3f5; /* Destaca os botões no mobile */
+    }
+
+    footer {
+        text-align: center;
+        padding: 1.5rem;
+        background-color: #212529;
+        color: #f8f9fa;
+        border-radius: 8px;
+        margin-top: 35px;
+        font-size: 0.85rem;
+    }
 }
 
-footer {
-    text-align: center;
-    padding: 2rem;
-    background: black;
-    color: white;
-    margin-top: 50px;
-}
+/* ==========================================================================
+   3. ESTILOS PARA COMPUTADOR (Telas grandes - acima de 769px)
+   ========================================================================== */
+@media (min-width: 769px) {
+    body {
+        max-width: 1100px; /* Evita que o site estique infinitamente em monitores grandes */
+        margin: 0 auto;    /* Centraliza o site na tela do computador */
+        padding: 30px 20px;
+    }
 
-video{
-    width:360px ;
-    height: auto;
-    border-radius: 8px
-}
-img{
-    width:360px ;
-    height: auto;
-    border-radius: 8px
-}
+    header {
+        background-color: #0d6efd;
+        color: #ffffff;
+        text-align: center;
+        padding: 3rem 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        margin-bottom: 30px;
+    }
 
-h2{
-    background-color: rgb(67, 150, 245);
-    color: aliceblue;
-    padding: 25px;
-    border-left: 15px rgb(207, 199, 199);
-    margin-top: px;
-    border-radius: 10px;
-    font-style: oblique;
-}
+    nav {
+        background-color: #ffffff;
+        padding: 14px 24px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+        display: flex;
+        flex-direction: row; /* Links ficam lado a lado no computador */
+        gap: 20px;
+        margin-bottom: 30px;
+    }
 
-h3{
-    background-color: rgb(67, 150, 245);
-    color: rgb(255, 255, 255);
-    padding: 25px;
-    border-left: 15px rgb(207, 199, 199);
-    margin-top: px;
-    border-radius: 10px;
-    font-style: oblique;
+    nav a {
+        color: #495057;
+        font-weight: 500;
+        padding: 6px 14px;
+        border-radius: 4px;
+        transition: all 0.2s ease;
+    }
+
+    nav a:hover {
+        background-color: #e9ecef;
+        color: #0d6efd;
+    }
+
+    h2 {
+        font-size: 1.85rem;
+    }
+
+    h3 {
+        font-size: 1.45rem;
+    }
+
+    video, img {
+        margin: 20px 0; /* Alinha à esquerda no desktop */
+    }
+
+    footer {
+        text-align: center;
+        padding: 2.5rem;
+        background-color: #212529;
+        color: #f8f9fa;
+        border-radius: 12px;
+        margin-top: 60px;
+    }
 }
