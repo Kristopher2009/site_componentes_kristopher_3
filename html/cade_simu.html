@@ -19,24 +19,20 @@
     <main>
        <h2>CADe_SIMU</h2>
        <h3>Comandos Elétricos</h3>
-       <p>A parte da "Força" (Músculo)
-        É o circuito por onde passa a eletricidade pesada. Ele leva a energia direto para o motor ou para a máquina funcionar. Como a voltagem e a corrente aqui são muito altas, ninguém mexe direto nesses fios.</p>
-        <p>A parte do "Comando" (Cérebro)
-            É o circuito que controla a brincadeira. Ele trabalha com energia baixa e segura. É aqui que ficam os botões de liga/desliga, as luzes de aviso e os sensores. Quando você aperta um botão aqui, ele manda um sinal para a parte da "Força" agir.</p>
-            
-
        <h3>Simulação 1: Comandos Elétricos - LED</h3>
        <div>
             <video src="../video/video_cad_simu/Simulação 1.mp4"controls></video>
        </div>
-
+       <p>Este é um circuito com lógica de selo (ou retenção). Um breve pulso no botão B1 é suficiente para ligar o contator K1 e mantê-lo ligado. Para desligar esse circuito, seria necessário pressionar o botão D1 no topo, o que cortaria a energia de todo o sistema.</p>
        <hr>
 
        <h3>Simulação 2: Comandos Elétricos - Botão NA e NF</h3>
        <div>
         <video src="../video/video_cad_simu/Simulação 2.mp4"controls></video>
        </div>
-
+       <p>Em repouso: A corrente elétrica é bloqueada pelo botão de partida (B1). Como a bobina (K1) está desligada, a lâmpada H2 permanece acesa através de um contato normalmente fechado (NF), indicando que o sistema está parado.</p>
+       <p> Ao ligar: Quando B1 é pressionado, a bobina K1 é energizada. Isso faz seus contatos mudarem de estado: o contato aberto se fecha, criando um "selo" que mantém a bobina ligada mesmo após soltar o botão.</p>
+       <p> Sinalização: Com o circuito ativo, a lâmpada H1 acende (indicando funcionamento) e a lâmpada H2 se apaga.</p>
        <hr>
 
        <h3>Simulação 3 e 4: Comandos Elétricos - Contator NA e NF</h3>
@@ -46,28 +42,36 @@
        <div>
         <video src="../video/video_cad_simu/Simulação 4.mp4"controls></video>
        </div>
-
+       <h3>Simulação 3</h3>
+       <p>O circuito consiste em uma linha direta de alimentação contendo uma chave geral ou botão de desligar (D1), conectada em série com um botão pulsador normalmente aberto (B1) e uma lâmpada piloto (H1). No início, a chave D1 é fechada, energizando o condutor até a entrada de B1. Quando o operador pressiona e mantém pressionado o botão B1, o circuito fecha e a lâmpada H1 acende imediatamente. Por não possuir uma lógica de selo ou retenção, no instante em que o operador solta o botão B1, a corrente é interrompida e a lâmpada se apaga.</p>
+       <h3>Simulação 4</h3>
+       <p>O circuito utiliza um botão pulsador (B1) que possui dois blocos de contatos independentes: um normalmente aberto (13-14) e outro normalmente fechado (11-12). Inicialmente, ao ligar a chave geral D1, a corrente flui diretamente pelo contato fechado de B1, mantendo a lâmpada H1 acesa. Ao pressionar o botão B1, os dois contatos invertem de posição simultaneamente: o lado de H1 se abre (apagando-a) e o lado da lâmpada H2 se fecha (acendendo-a). Como o botão não tem retenção mecânica, assim que ele é solto, o circuito retorna instantaneamente ao estado inicial, com H1 acesa e H2 apagada.</p>
        <hr>
 
        <h3>Simulação 5: Comandos Elétricos - Contato Selo</h3>
        <div>
         <video src="../video/video_cad_simu/Simulação 5.mp4"controls></video>
        </div>
-
+       <p>Este circuito aprimora a lógica de retenção adicionando um botão de parada dedicado (B0, normalmente fechado). Ao fechar a chave geral D1, a energia passa por B0 e aguarda no botão de partida B1. Quando B1 é pressionado, a bobina K1 é energizada, fechando seus dois contatos auxiliares normalmente abertos (13-14 e 53-54) ao mesmo tempo. O contato 13-14 realiza o "selo", mantendo a bobina K1 ligada mesmo após soltar B1. O contato 53-54 acende a lâmpada H2. Para desligar o circuito, o operador pressiona o botão B0, o que interrompe temporariamente a corrente, desfaz o selo magnético de K1 e desliga todo o sistema.</p>
        <hr>
 
        <h3>Simulação 6: Partida Direta - Comando e Força</h3>
        <div>
         <video src="../video/video_cad_simu/Simulação 6.mp4"controls></video>
        </div>
+       <p></p>
        <hr>
 
        <h3>Simulação 7: Partida Reversora</h3>
        <div>
         <video src="../video/video_cad_simu/simulação 7.mp4"controls></video>
        </div>
-
+       <h3>Simulação 6 & 7</h3>
+       <p>O sistema apresenta um circuito completo de partida e reversão de um motor de indução trifásico com intertravamento elétrico de segurança para evitar curto-circuito entre as fases.
+        No circuito de comando, a corrente passa pelos dispositivos de proteção: o botão de emergência (D1), o contato auxiliar do relé térmico (F1) e o botão geral de parada (B0).</p>
+        <hr>
        <p>By Kristopher &trade;</p>
+       
 
 </body>
 </html>
