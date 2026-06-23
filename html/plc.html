@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styele.css">
-    <title>Componentes Eletrônicos</title>
+    <title>Componentes Eletrônicos - Mundo SENAI</title>
 </head>
 <body>
     <header>
@@ -18,8 +18,50 @@
         </nav>
     </header>
     <main>
-      
-
+      <h2>TIA Portal V20</h2>
+      <p>O TIA Portal (Totally Integrated Automation Portal) é a principal plataforma de software da Siemens desenvolvida para centralizar e integrar todos os processos de engenharia em automação industrial. Ele é o ambiente onde engenheiros de controle programam CLPs (Controladores Lógicos Programáveis), configuram IHMs (Interfaces Homem-Máquina), ajustam inversores de frequência e gerenciam redes de comunicação industrial.</p>
+        <h3>Inicialização e Configuração do Software (CPU) </h3>
+        <p>Passo 1: Abra o TIA Portal e selecione 'Create new project' (Criar novo projeto). Defina o nome e clique em Criar.</p>
+        <p>Passo 2: Clique em 'Configure a device' (Configurar um dispositivo) e depois em 'Add new device' (Adicionar novo dispositivo).</p>
+        <p>Passo 3: No catálogo de hardware, por exemplo, selecione a família SIMATIC S7-1200 e escolha o modelo CPU 1215C DC/DC/DC (Referência: 6ES7 214-1AG40-0XB0).</p>
+        <p>Passo 4: Na árvore de projetos à esquerda, abra a pasta 'Program blocks' e dê dois cliques em 'Main (OB1)'. Esta é a tela principal onde o programa em Diagrama Ladder é construído.</p>
+        <h3>Linguagem Ladder</h3>
+        <p>É a linguagem visual mais tradicional da automação, criada para que eletricistas e técnicos pudessem programar CLPs sem precisar digitar linhas de código complexas.</p>
+        <p>Formato de "Escada": A lógica corre em linhas horizontais (degraus) entre duas barras verticais de energia.</p>
+        <h3>Componentes Básicos:</h3>
+        <p>Contatos (| | ou |/|): São as entradas (botões, sensores, condições).</p>
+        <p>Bobinas (( )): São as saídas (motores, lâmpadas, válvulas).</p>
+        <p>Funcionamento: O CLP lê o código de cima para baixo e da esquerda para a direita em um ciclo contínuo de milissegundos (Scan). A saída só liga se a "corrente virtual" encontrar um caminho fechado pelos contatos.</p>
+        <h2>Contatos Básicos (Lógica Sem Temporizador)</h2>
+        <h3>Tipo de Contato</h3>
+        <p>Normalmente Aberto (NA) --||--</p>
+        <p>Como uma campainha: a energia só passa enquanto você mantém o botão pressionado.</p>
+        <p>Normalmente Fechado (NF) --|/|--</p>
+        <p>Como o sensor de uma porta fechada: a energia passa direto. Se você abrir a porta (pressionar o botão), ele corta a energia.</p>
+        <h3>Programa Base - Sem Temporizador</h3>
+        <div>
+            <img src="../plc prints/PLC_ 3.jpg" alt="">
+        </div>
+        <p>Network 1 (Controle do Motor): Mostra um contato normalmente aberto associado à memória %M10.0 ('mem10_0'). Quando este contato fecha, ele liga diretamente a bobina de saída %Q0.0 ('motor1'). Se soltar o botão, o motor desliga na mesma hora.</p>
+        <p>Network 2 (Controle da Válvula): Segue o mesmo princípio direto. O contato normalmente aberto %M10.1 ('mem_10_1') aciona diretamente a bobina de saída %Q0.1 ('valvula1').</p>
+        <h2>Configuração e Parametrização dos Temporizadores</h2>
+        <div>
+            <img src="../plc prints/PLC - TIA PORTAL..jpg" alt="">
+        </div>
+        <hr>
+        <div>
+            <img src="../plc prints/PLC - TIA PORTAL_2.jpg" alt="">
+        </div>
+        <p>Network 1 (O bloco TON - Atraso para LIGAR): Foi adicionado o bloco de tempo %DB1 ('temp1') com a configuração PT = t#9s. Significa que ao apertar o botão %M10.0, o sistema aguardará obrigatoriamente 9 segundos para só depois ligar o 'motor1' (%Q0.0).</p>
+        <p>Network 2 (O bloco TOF - Atraso para DESLIGAR): Foi adicionado o bloco %DB2 ('temp2') com a configuração PT = t#7s. Ao acionar o botão %M10.1, a 'valvula1' (%Q0.1) </p>
+        <p></p>
+        <p>Network 1 (Status do TON): A linha está azul e tracejada. Isso mostra que o botão %M10.0 está aberto (desativado). A contagem ET está parada em T#0ms e a saída do motor está desligada.</p>
+        <p>Network 2 (Status do TOF): A linha está verde contínua. Isso demonstra o comportamento real do TOF mantendo a válvula %Q0.1 ligada e alimentada mesmo durante o processo de temporização, garantindo o funcionamento estendido de 7 segundos após o comando.</p>
+        <h2>Glossário Técnico dos Blocos </h2>
+        <h3>IN (Input): Entrada digital que inicia ou dispara a função do temporizador.</h3>
+        <h3>PT (Preset Time): Tempo total configurado que o bloco deve usar como alvo (Ex: t#9s).</h3>
+        <h3>Q (Output): Saída que liga ou desliga a carga física (motor/válvula).</h3>
+        <h3>ET (Elapsed Time): Variável que exibe o cronômetro correndo em milissegundos no site em tempo real.</h3>
         <hr>
        <p>By Kristopher &trade;</p>
        
