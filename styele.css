@@ -1,17 +1,40 @@
 /* ==========================================================================
-   1. ESTILOS GERAIS (Funcionam em qualquer tamanho de tela)
+   1. ESTILOS GERAIS (Funcionam em qualquer tamanho de tela, aprimorados)
    ========================================================================== */
    body {
     font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
     line-height: 1.6;
-    background-color: #f8f9fa;
+    /* Alterado para BRANCO puro, conforme solicitado */
+    background-color: #ffffff; 
     color: #212529;
     font-size: 16px;
     margin: 0;
     padding: 0; /* Removido o padding fixo para controlar melhor no mobile */
+    position: relative; /* Contexto de posicionamento para o pseudo-elemento SENAI */
 }
 
-/* Links */
+/* Novo elemento: Quadradinho azul com SENAI no canto superior esquerdo */
+body::before {
+    content: 'SENAI';
+    position: fixed; /* Fixo no canto da janela de visualização (viewport) */
+    top: 10px; /* Espaçamento do topo */
+    left: 10px; /* Espaçamento da esquerda */
+    width: 50px; /* Pequeno quadrado */
+    height: 50px;
+    background-color: #0d6efd; /* Cor azul de destaque unificada */
+    color: #ffffff; /* Texto branco */
+    display: flex; /* Centralização do texto */
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 4px; /* Leve arredondamento */
+    z-index: 1000; /* Garante que fique acima de tudo */
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Links (Unificados para usar o azul #0d6efd) */
 a {
     text-decoration: none;
     color: #0d6efd;
@@ -22,11 +45,11 @@ a:hover {
     color: #0a58ca;
 }
 
-/* Mídias responsivas */
+/* Mídias responsivas (Inalteradas) */
 video, img {
     max-width: 100%; /* Garante que nunca fiquem maiores que a tela do celular */
-    width: 100%;     /* Ocupa a largura disponível até o limite máximo */
-    max-width: 360px; /* Limite do tamanho original que você pediu */
+    width: 100%; 	 /* Ocupa a largura disponível até o limite máximo */
+    max-width: 360px; /* Limite do tamanho original */
     height: auto;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -34,7 +57,7 @@ video, img {
     margin: 20px auto; /* Centraliza em telas menores */
 }
 
-/* Títulos */
+/* Títulos (Unificados para usar o azul #0d6efd e borda) */
 h2 {
     color: #212529;
     border-left: 5px solid #0d6efd;
@@ -46,7 +69,7 @@ h2 {
 
 h3 {
     color: #495057;
-    border-left: 4px solid #6c757d;
+    border-left: 4px solid #0d6efd;
     padding-left: 12px;
     margin-top: 25px;
     margin-bottom: 10px;
@@ -54,7 +77,7 @@ h3 {
 }
 
 /* ==========================================================================
-   2. ESTILOS PARA CELULAR (Telas pequenas - até 768px)
+   2. ESTILOS PARA CELULAR (Telas pequenas - até 768px, aprimorados)
    ========================================================================== */
 @media (max-width: 768px) {
     body {
@@ -62,12 +85,14 @@ h3 {
     }
 
     header {
-        background-color: #0d6efd;
+        /* Alterado para o azul de destaque unificado */
+        background-color: #0d6efd; 
         color: #ffffff;
         text-align: center;
         padding: 1.5rem 1rem;
         border-radius: 8px;
         margin-bottom: 15px;
+        position: relative; /* Contexto de posicionamento para o logo SENAI se estiver dentro */
     }
 
     nav {
@@ -87,14 +112,16 @@ h3 {
         font-weight: 500;
         padding: 10px;
         border-radius: 6px;
-        background-color: #f1f3f5; /* Destaca os botões no mobile */
+        /* Alterado para um azul muito claro para o tema */
+        background-color: #e1f5fe; 
     }
 
     footer {
         text-align: center;
         padding: 1.5rem;
-        background-color: #212529;
-        color: #f8f9fa;
+        /* Alterado para o azul de destaque unificado */
+        background-color: #0d6efd; 
+        color: #ffffff; /* Texto branco para contraste */
         border-radius: 8px;
         margin-top: 35px;
         font-size: 0.85rem;
@@ -102,7 +129,7 @@ h3 {
 }
 
 /* ==========================================================================
-   3. ESTILOS PARA COMPUTADOR (Telas grandes - acima de 769px)
+   3. ESTILOS PARA COMPUTADOR (Telas grandes - acima de 769px, aprimorados)
    ========================================================================== */
 @media (min-width: 769px) {
     body {
@@ -112,7 +139,8 @@ h3 {
     }
 
     header {
-        background-color: #0d6efd;
+        /* Alterado para o azul de destaque unificado */
+        background-color: #0d6efd; 
         color: #ffffff;
         text-align: center;
         padding: 3rem 2rem;
@@ -138,12 +166,12 @@ h3 {
         padding: 6px 14px;
         border-radius: 4px;
         transition: all 0.3s ease;
-
     }
 
     nav a:hover {
-        background-color: #e9ecef;
-        color: #0d6efd;
+        /* Alterado para um azul muito claro para o tema */
+        background-color: #bbdefb; 
+        color: #0d6efd; /* Mantém a cor azul de destaque */
         transition: all 0.3s ease;
     }
 
@@ -162,10 +190,10 @@ h3 {
     footer {
         text-align: center;
         padding: 2.5rem;
-        background-color: #212529;
-        color: #f8f9fa;
+        /* Alterado para o azul de destaque unificado */
+        background-color: #0d6efd; 
+        color: #ffffff; /* Texto branco para contraste */
         border-radius: 12px;
         margin-top: 60px;
     }
-
 }

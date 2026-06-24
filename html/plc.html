@@ -25,6 +25,9 @@
         <p>Passo 2: Clique em 'Configure a device' (Configurar um dispositivo) e depois em 'Add new device' (Adicionar novo dispositivo).</p>
         <p>Passo 3: No catálogo de hardware, por exemplo, selecione a família SIMATIC S7-1200 e escolha o modelo CPU 1215C DC/DC/DC (Referência: 6ES7 214-1AG40-0XB0).</p>
         <p>Passo 4: Na árvore de projetos à esquerda, abra a pasta 'Program blocks' e dê dois cliques em 'Main (OB1)'. Esta é a tela principal onde o programa em Diagrama Ladder é construído.</p>
+        <div>
+            <img src="../plc prints/TIA PORTAL - CPU.jpg" alt="">
+        </div>
         <h3>Linguagem Ladder</h3>
         <p>É a linguagem visual mais tradicional da automação, criada para que eletricistas e técnicos pudessem programar CLPs sem precisar digitar linhas de código complexas.</p>
         <p>Formato de "Escada": A lógica corre em linhas horizontais (degraus) entre duas barras verticais de energia.</p>
@@ -38,8 +41,11 @@
         <p>Como uma campainha: a energia só passa enquanto você mantém o botão pressionado.</p>
         <p>Normalmente Fechado (NF) --|/|--</p>
         <p>Como o sensor de uma porta fechada: a energia passa direto. Se você abrir a porta (pressionar o botão), ele corta a energia.</p>
-        <h3>Programa Base - Sem Temporizador</h3>
         <div>
+        <img src="" alt="">
+        </div>
+        <div>
+        <h3>Programa Base - Sem Temporizador</h3>
             <img src="../plc prints/PLC_ 3.jpg" alt="">
         </div>
         <p>Network 1 (Controle do Motor): Mostra um contato normalmente aberto associado à memória %M10.0 ('mem10_0'). Quando este contato fecha, ele liga diretamente a bobina de saída %Q0.0 ('motor1'). Se soltar o botão, o motor desliga na mesma hora.</p>
