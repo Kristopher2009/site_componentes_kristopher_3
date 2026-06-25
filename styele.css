@@ -199,3 +199,10 @@ h3 {
         margin-top: 60px;
     }
 }
+/* O @media ele funciona como um "detector de telas". Ele cria regras condicionais para
+o navegador, dizendo como "Se o usuario estiver usando uma tela pequena, use este visual"
+porem, se for uma tela grande, ele ira dizer "Se o usuario estiver usando uma tela grande, use este visual"
+@media (max-width: 768px) -- Regra do Celular
+proprio para o celular
+@media (min-width: 769px) -- Regra do pc
+tudo que esta dentro deste bloco(769px) será proprio para o
