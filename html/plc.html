@@ -31,10 +31,17 @@
         <h3>Linguagem Ladder</h3>
         <p>É a linguagem visual mais tradicional da automação, criada para que eletricistas e técnicos pudessem programar CLPs sem precisar digitar linhas de código complexas.</p>
         <p>Formato de "Escada": A lógica corre em linhas horizontais (degraus) entre duas barras verticais de energia.</p>
+        <div>
+            <img src="../plc prints/ladder.jpg" alt="">
+        </div>
         <h3>Componentes Básicos:</h3>
         <p>Contatos (| | ou |/|): São as entradas (botões, sensores, condições).</p>
         <p>Bobinas (( )): São as saídas (motores, lâmpadas, válvulas).</p>
         <p>Funcionamento: O CLP lê o código de cima para baixo e da esquerda para a direita em um ciclo contínuo de milissegundos (Scan). A saída só liga se a "corrente virtual" encontrar um caminho fechado pelos contatos.</p>
+        <div>
+            <img src="../plc prints/na e nf.jpg" alt="">
+        </div>
+
         <h2>Contatos Básicos (Lógica Sem Temporizador)</h2>
         <h3>Tipo de Contato</h3>
         <p>Normalmente Aberto (NA) --||--</p>
@@ -42,7 +49,7 @@
         <p>Normalmente Fechado (NF) --|/|--</p>
         <p>Como o sensor de uma porta fechada: a energia passa direto. Se você abrir a porta (pressionar o botão), ele corta a energia.</p>
         <div>
-        <img src="" alt="">
+        <img src="../plc prints/sem temp.jpg" alt="">
         </div>
         <div>
         <h3>Programa Base - Sem Temporizador</h3>
@@ -68,6 +75,9 @@
         <h3>PT (Preset Time): Tempo total configurado que o bloco deve usar como alvo (Ex: t#9s).</h3>
         <h3>Q (Output): Saída que liga ou desliga a carga física (motor/válvula).</h3>
         <h3>ET (Elapsed Time): Variável que exibe o cronômetro correndo em milissegundos no site em tempo real.</h3>
+        <div>
+            <img src="../plc prints/glosario.png" alt="">
+        </div>
         <hr>
        <p>By Kristopher &trade;</p>
        
