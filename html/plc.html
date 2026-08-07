@@ -70,6 +70,7 @@
         <p></p>
         <p>Network 1 (Status do TON): A linha está azul e tracejada. Isso mostra que o botão %M10.0 está aberto (desativado). A contagem ET está parada em T#0ms e a saída do motor está desligada.</p>
         <p>Network 2 (Status do TOF): A linha está verde contínua. Isso demonstra o comportamento real do TOF mantendo a válvula %Q0.1 ligada e alimentada mesmo durante o processo de temporização, garantindo o funcionamento estendido de 7 segundos após o comando.</p>
+        <hr>
         <h2>Glossário Técnico dos Blocos </h2>
         <h3>IN (Input): Entrada digital que inicia ou dispara a função do temporizador.</h3>
         <h3>PT (Preset Time): Tempo total configurado que o bloco deve usar como alvo (Ex: t#9s).</h3>
@@ -77,6 +78,49 @@
         <h3>ET (Elapsed Time): Variável que exibe o cronômetro correndo em milissegundos no site em tempo real.</h3>
         <div>
             <img src="../plc prints/glosario.png" alt="">
+        </div>
+        <hr>
+        <h2>TON (Timer On Delay)</h2>
+        <p>Retarda a ligação. Aguarda o tempo programado após a entrada ser ativada para só então ligar a saída</p>
+        <div>
+            <img src="../plc prints/TON.jpg" alt=""> 
+        </div>
+        
+        <h2>TOF (Timer Off Delay)</h2>
+        <p>Retarda o desligamento. Mantém a saída ligada pelo tempo programado após a entrada ser desativada, desligando-a ao término da contagem.</p>
+        <div>
+            <img src="../plc prints/TOFF.jpg" alt="">
+        </div>
+        
+        <h2>TP (Pulse Timer)</h2>
+        <p>Gera um pulso fixo. Ativa a saída pelo tempo exato programado no momento em que recebe um sinal de entrada, independentemente de a entrada continuar ligada ou ser desligada.</p>
+        <div>
+            <img src="../plc prints/TP.jpg" alt="">
+        <div>
+        
+         <h2>MOVE</h2>
+        <p>Pega o valor contido em uma fonte ou memória (origem/IN) e o escreve em outro local de memória ou saída (destino/OUT).</p>
+        <div>
+            <img src="../plc prints/MOVE.jpg" alt="">
+        </div>
+
+        <h2>CMP ==</h2>
+        <p>(Igual a): Valida a comparação e libera o sinal elétrico apenas se o valor de entrada (IN1) for exatamente igual ao valor de referência (IN2).</p>
+        <div>
+            <img src="../plc prints/==.jpg" alt="">
+            <div>
+
+        <h2>CMP < </h2>
+        <p>< (Menor que): Valida a comparação e libera o sinal elétrico apenas se o valor de entrada (IN1) for estritamente menor que o valor de referência (IN2).</p>
+        <div>
+            <img src="../plc prints/diferente de.jpg" alt="">
+        </div>
+        <hr>
+        <h2>PLC / Sinaleira / Ladder</h2>
+        <h2>Como funcina essa relação entre esses três elementos?</h2>
+        <p>A relação entre esses três elementos funciona como uma cadeia de comando da automação: a linguagem Ladder é a programação visual criada no computador onde você estabelece as regras de tempo e sequência do semáforo, o PLC Siemens atua como o cérebro físico que recebe e executa essa lógica continuamente, e a sinaleira na bancada é o dispositivo final que recebe os sinais elétricos enviados pelas saídas digitais do PLC para acender fisicamente as lâmpadas vermelha, amarela e verde na ordem correta.</p>
+        <div>
+           <video src="../video do plc/video_plc.mp4"controls></video>
         </div>
         <hr>
        <p>By Kristopher &trade;</p>
